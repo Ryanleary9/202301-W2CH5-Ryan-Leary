@@ -1,4 +1,5 @@
 node_modules
+functions.test.js
 # Logs
 logs
 *.log
