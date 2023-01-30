@@ -1,11 +1,28 @@
-import { pedro } from './functions.js';
+import { arrayCreator, fillGrid } from './functions.js';
 
-describe('Given test function', () => {
-  test('Sould give 1 + 1 = 2', () => {
-    const a = 1;
-    const b = 1;
-    const r = pedro(a, b);
-    const expected = 2;
-    expect(r).toBe(expected);
+describe('arrayCreator', () => {
+  test('Creates a 2D array with the specified number of colums and rows', () => {
+    const colum = 3;
+    const row = 4;
+    const result = arrayCreator(colum, row);
+    expect(result.length).toEqual(colum);
+    for (let i = 0; i < result.length; i++) {
+      expect(result[i].length).toEqual(row);
+    }
+  });
+});
+
+describe('Given fillGrid function', () => {
+  test('Generates a 2D array with random 0 or 1 values', () => {
+    let colum = 5;
+    let row = 5;
+    let grid = [];
+    fillGrid(colum, row, arrayCreator());
+    arrayCreator();
+    for (let i = 0; i < grid.length; i++) {
+      for (let y = 0; y < grid[i].length; y++) {
+        expect(grid[i][y]).toBe(0).or.toBe(1);
+      }
+    }
   });
 });
