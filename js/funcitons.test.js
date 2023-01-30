@@ -25,27 +25,15 @@ describe('Given fillGrid function', () => {
       }
     }
   });
-  test('Generates a 2D array with random 0 or 1 values', () => {
-    let colum = 3;
-    let row = 3;
+  test('When given no amount of colums and rows should give undefined', () => {
+    let colum = 0;
+    let row = 0;
     let grid = [];
     fillGrid(colum, row, arrayCreator());
     arrayCreator();
     for (let i = 0; i < grid.length; i++) {
       for (let y = 0; y < grid[i].length; y++) {
-        expect(grid[i][y]).toBe(0).or.toBe(1);
-      }
-    }
-  });
-  test('Generates a 2D array with random 0 or 1 values', () => {
-    let colum = 100;
-    let row = 100;
-    let grid = [];
-    fillGrid(colum, row, arrayCreator());
-    arrayCreator();
-    for (let i = 0; i < grid.length; i++) {
-      for (let y = 0; y < grid[i].length; y++) {
-        expect(grid[i][y]).toBe(0).or.toBe(1);
+        expect(grid[i][y]).toBe(undefined);
       }
     }
   });
